@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>[[${email}]] 주문 현황</h3>
+<hr>
+<table style="width : 500px;">
+    <tr> <th style="width:200px;">상품코드</th><th style="width:100px;">수량</th>
+        <th style="width:200px;">주문날짜</th>
+    </tr>
+    <tr th:each="vo:${list}">
+        <td style="text-align: center;" th:text="${vo.pcode}"></td>
+        <td style="text-align: center;" th:text="${vo.quantity}"></td>
+        <td style="text-align: center;" th:text="${vo.orderDate}"></td>
+    </tr>
+</table>
+<hr>
+<a th:href="@{../}">HOME</a>
+</body>
+</html>
